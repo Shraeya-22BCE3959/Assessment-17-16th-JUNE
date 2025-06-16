@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dollar to Rupee Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 10px 10px 10px 0;
+      width: 200px;
+    }
+
+    .converter {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>73.66 Indian Rupee</h2>
+
+  <div class="converter">
+    <input type="number" id="dollar" placeholder="Enter USD">
+    <label for="dollar">Dollar</label>
+    <br>
+    <input type="text" id="rupee" placeholder="Converted INR" readonly>
+    <label for="rupee">Rupee</label>
+  </div>
+
+  <script>
+    const dollarInput = document.getElementById("dollar");
+    const rupeeOutput = document.getElementById("rupee");
+    const exchangeRate = 73.66;
+
+    dollarInput.addEventListener("input", () => {
+      const dollarValue = parseFloat(dollarInput.value) || 0;
+      const rupeeValue = (dollarValue * exchangeRate).toFixed(2);
+      rupeeOutput.value = rupeeValue;
+    });
+  </script>
+
+</body>
+</html>
